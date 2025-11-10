@@ -1,15 +1,20 @@
-#!/bin/bash
+#!/bin/sh -e
 
-# Source the common script
-# shellcheck disable=SC1091
-source "$(dirname "$0")/../../common-script.sh"
+. ../../common-script.sh
 
-# --- Proton VPN ---
-# Check if Proton VPN is already installed
-if [ -d "/Applications/Proton VPN.app" ]; then
-    echo "Proton VPN is already installed."
-else
-    # Install Proton VPN
-    echo "Installing Proton VPN..."
-    brew install --cask proton-vpn
-fi
+installProtonVPN() {
+    if ! brewprogram_exists proton-vpn; then
+        printf "%b\n" "${YELLOW}Installing Proton VPN...${RC}"
+        brew install --cask proton-vpn
+        if [ $? -ne 0 ]; then
+            printf "%b\n" "${RED}Failed to install Proton VPN. Please check your Homebrew installation or try again later.${RC}"
+            exit 1
+        fi
+        printf "%b\n" "${GREEN}Proton VPN installed successfully!${RC}"
+    else
+        printf "%b\n" "${GREEN}Proton VPN is already installed.${RC}"
+    fi
+}
+
+checkEnv
+installProtonVPN

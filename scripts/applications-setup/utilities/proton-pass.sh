@@ -1,15 +1,20 @@
-#!/bin/bash
+#!/bin/sh -e
 
-# Source the common script
-# shellcheck disable=SC1091
-source "$(dirname "$0")/../../common-script.sh"
+. ../../common-script.sh
 
-# --- Proton Pass ---
-# Check if Proton Pass is already installed
-if [ -d "/Applications/Proton Pass.app" ]; then
-    echo "Proton Pass is already installed."
-else
-    # Install Proton Pass
-    echo "Installing Proton Pass..."
-    brew install --cask proton-pass
-fi
+installProtonPass() {
+    if ! brewprogram_exists proton-pass; then
+        printf "%b\n" "${YELLOW}Installing Proton Pass...${RC}"
+        brew install --cask proton-pass
+        if [ $? -ne 0 ]; then
+            printf "%b\n" "${RED}Failed to install Proton Pass. Please check your Homebrew installation or try again later.${RC}"
+            exit 1
+        fi
+        printf "%b\n" "${GREEN}Proton Pass installed successfully!${RC}"
+    else
+        printf "%b\n" "${GREEN}Proton Pass is already installed.${RC}"
+    fi
+}
+
+checkEnv
+installProtonPass
