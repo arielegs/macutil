@@ -5,7 +5,7 @@
 installProtonMail() {
     if ! brewprogram_exists proton-mail; then
         printf "%b\n" "${YELLOW}Installing Proton Mail...${RC}"
-        brew install --cask proton-mail
+        brew install --cask proton-mail > /dev/null 2>&1
         if [ $? -ne 0 ]; then
             printf "%b\n" "${RED}Failed to install Proton Mail. Please check your Homebrew installation or try again later.${RC}"
             exit 1
