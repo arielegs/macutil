@@ -38,11 +38,6 @@ name = "Proton Mail"
 description = "Proton Mail is an end-to-end encrypted email service."
 script = "communication-apps/proton-mail.sh"
 
-[[data.entries]]
-name = "Proton Calendar"
-description = "Proton Calendar is a secure and private calendar."
-script = "communication-apps/proton-calendar.sh"
-
 [[data]]
 name = "Developer Tools"
 
