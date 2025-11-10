@@ -76,11 +76,6 @@ name = "Zed"
 description = "Zed is a next-generation code editor written in rust, designed for high-performance collaboration with humans and AI."
 script = "developer-tools/zed.sh"
 
-[[data.entries]]
-name = "Docker Desktop"
-description = "Docker is a platform for developing, shipping, and running applications in containers."
-script = "developer-tools/docker.sh"
-
 [[data]]
 name = "Web Browsers"
 
