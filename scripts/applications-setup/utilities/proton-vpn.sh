@@ -5,7 +5,7 @@
 installProtonVPN() {
     if ! brewprogram_exists proton-vpn; then
         printf "%b\n" "${YELLOW}Installing Proton VPN...${RC}"
-        brew install --cask proton-vpn > /dev/null 2>&1
+        brew install --cask proton-vpn
         if [ $? -ne 0 ]; then
             printf "%b\n" "${RED}Failed to install Proton VPN. Please check your Homebrew installation or try again later.${RC}"
             exit 1
