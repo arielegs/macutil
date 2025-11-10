@@ -33,6 +33,16 @@ name = "WhatsApp"
 description = "WhatsApp is a popular messaging application that allows users to send text messages, voice messages, make voice and video calls, and share media files."
 script = "communication-apps/whatsapp-setup.sh"
 
+[[data.entries]]
+name = "Proton Mail"
+description = "Proton Mail is an end-to-end encrypted email service."
+script = "communication-apps/proton-mail.sh"
+
+[[data.entries]]
+name = "Proton Calendar"
+description = "Proton Calendar is a secure and private calendar."
+script = "communication-apps/proton-calendar.sh"
+
 [[data]]
 name = "Developer Tools"
 
@@ -70,6 +80,11 @@ script = "developer-tools/vscodium.sh"
 name = "Zed"
 description = "Zed is a next-generation code editor written in rust, designed for high-performance collaboration with humans and AI."
 script = "developer-tools/zed.sh"
+
+[[data.entries]]
+name = "Docker Desktop"
+description = "Docker is a platform for developing, shipping, and running applications in containers."
+script = "developer-tools/docker.sh"
 
 [[data]]
 name = "Web Browsers"
@@ -146,6 +161,21 @@ name = "Utilities"
 name = "AppCleaner"
 description = "AppCleaner is a small application which allows you to thoroughly uninstall unwanted apps."
 script = "utilities/appcleaner-setup.sh"
+
+[[data.entries]]
+name = "Proton Drive"
+description = "Proton Drive is a secure cloud storage service."
+script = "utilities/proton-drive.sh"
+
+[[data.entries]]
+name = "Proton Pass"
+description = "Proton Pass is a secure password manager."
+script = "utilities/proton-pass.sh"
+
+[[data.entries]]
+name = "Proton VPN"
+description = "Proton VPN is a secure and private VPN service."
+script = "utilities/proton-vpn.sh"
 
 [[data]]
 name = "ZSH Prompt"
